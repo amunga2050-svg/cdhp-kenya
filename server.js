@@ -1,4 +1,13 @@
-const consumerKey = process.env.CONSUMER_KEY;
-const consumerSecret = process.env.CONSUMER_SECRET;
-const shortCode = process.env.SHORTCODE;
-const passkey = process.env.PASSKEY;
+const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("CDHP backend is running successfully");
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
+});
